@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans&display=swap");
+
+* {
+  text-decoration: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* #192428 is the color Mirage */
+body {
+  background-color: #192428;
+  font-family: "Fira Sans", sans-serif;
+}
