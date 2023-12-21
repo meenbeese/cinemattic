@@ -1,0 +1,88 @@
+import React from "react";
+import logo from "../assets/logo.webp";
+import { Link } from "react-router-dom";
+import Navdata from "../utilities/Navbar";
+import COLORS from "../utilities/Color";
+import Searchbar from "./Lookup";
+import {
+  AppBar,
+  Box,
+  Button,
+  Chip,
+  Stack,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+
+const Navbar = () => {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        position="static"
+        sx={{
+          bgcolor: `linear-gradient(45deg, ${COLORS.Brink_Pink} 30%, ${COLORS.Coral} 90%)`,
+          borderRadius: "12px",
+          boxShadow: "0 6px 10px rgba(0,0,0,0.4)",
+          p: 2,
+        }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Link to="/" sx={{ textDecoration: "none" }}>
+            <Chip
+              icon={
+                <img src={logo} width="50" height="50" alt="Cinemattic logo" />
+              }
+              label={
+                <Typography
+                  variant="h5"
+                  sx={{
+                    flexGrow: 1,
+                    color: COLORS.White,
+                    textDecoration: "none",
+                  }}
+                >
+                  Cinemattic
+                </Typography>
+              }
+              sx={{
+                height: "64px",
+                backgroundColor: COLORS.Studio,
+                borderRadius: "20px",
+                padding: "5px",
+                transition: "transform 0.3s, background-color 0.3s",
+                "&:hover": {
+                  transform: "scale(1.04)",
+                  backgroundColor: COLORS.Brink_Pink,
+                },
+              }}
+            />
+          </Link>
+          <Stack
+            direction="row"
+            alignItems="center"
+            spacing={2}
+            sx={{ marginLeft: "auto", marginRight: "auto" }}
+          >
+            {Navdata?.map((data) => (
+              <Button
+                color="inherit"
+                component={Link}
+                to={data.link}
+                sx={{
+                  textDecoration: "underline",
+                  color: COLORS.White,
+                  "&:hover": { color: COLORS.Brink_Pink },
+                }}
+              >
+                {data.Name}
+              </Button>
+            ))}
+          </Stack>
+          <Searchbar sx={{ width: "300px", marginLeft: "auto" }} />
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+};
+
+export default Navbar;

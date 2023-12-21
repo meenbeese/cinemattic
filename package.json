@@ -1,0 +1,33 @@
+{
+  "name": "cinemattic",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.4",
+    "@mui/lab": "^5.0.0-alpha.160",
+    "@mui/material": "^5.15.4",
+    "dotenv": "^16.3.1",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-router-dom": "^6.21.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "prettier": "3.1.1",
+    "vite": "^5.0.11"
+  }
+}
