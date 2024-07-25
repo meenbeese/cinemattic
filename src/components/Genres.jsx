@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { chunk, shuffle } from "lodash";
+import { splitEvery, sort } from "ramda";
 import Contextpage from "../pages/Contextpage";
 import COLORS from "../utilities/Color";
 import { Box } from "@mui/material";
@@ -14,7 +14,10 @@ const Genres = () => {
   const [randomGenre, setRandomGenre] = useState("");
 
   const handleRandom = () => {
-    const random = shuffle(genres?.length ? genres : [])[0];
+    const random = sort(
+      () => 0.5 - Math.random(),
+      genres?.length ? genres : [],
+    )[0];
     if (random) {
       setRandomGenre(random.id);
       setActiveGenre(random.id);
@@ -32,7 +35,7 @@ const Genres = () => {
   return (
     <>
       <Box borderRadius={5} sx={{ margin: "20px", textAlign: "center" }}>
-        {chunk(genres?.length ? genres : [], GENRE_ROW_SIZE).map(
+        {splitEvery(GENRE_ROW_SIZE, genres?.length ? genres : []).map(
           (row, i, arr) => (
             <Box
               key={`row${i}`}

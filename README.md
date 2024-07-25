@@ -32,7 +32,7 @@ Cinemattic is built with the following technologies:
 - [Vite](https://vitejs.dev/)
 - [MUI](https://mui.com/)
 - [TMDB](https://developer.themoviedb.org/docs/getting-started)
-- [Lodash](https://lodash.com/)
+- [Ramda](https://ramdajs.com/)
 
 <hr/>
 
