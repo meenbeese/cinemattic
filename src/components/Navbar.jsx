@@ -27,10 +27,10 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Link to="/" sx={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <Chip
               icon={
-                <img src={logo} width="50" height="50" alt="Cinemattic logo" />
+                <img src={logo} width="40" height="40" alt="Cinemattic logo" />
               }
               label={
                 <Typography
@@ -45,7 +45,7 @@ const Navbar = () => {
                 </Typography>
               }
               sx={{
-                height: "64px",
+                height: "56px",
                 backgroundColor: COLORS.Studio,
                 borderRadius: "20px",
                 padding: "5px",
@@ -65,11 +65,12 @@ const Navbar = () => {
           >
             {Navdata?.map((data) => (
               <Button
+                key={data.Name}
                 color="inherit"
                 component={Link}
                 to={data.link}
                 sx={{
-                  textDecoration: "underline",
+                  textDecoration: "none",
                   color: COLORS.White,
                   "&:hover": { color: COLORS.Brink_Pink },
                 }}
